@@ -23,6 +23,7 @@ class Client {
     target.search = querystring.stringify(mergedQuery)
 
     delete data.query
+    delete data['content-length']
 
     const req = superagent.post(target).send(data.body)
 
